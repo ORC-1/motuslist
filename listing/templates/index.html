@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+{% load hitcount_tags %}
+<html class="no-js" lang="en">
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotusList|Home</title>
+
+    <!-- All plugins -->
+    <link href="{% static 'assets/plugins/css/plugins.css' %}" rel="stylesheet">
+
+    <!-- Custom style -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/responsiveness.css' %}" rel="stylesheet">
+	<link  type="text/css" rel="stylesheet" id="jssDefault" href="{% static 'assets/css/colors/main.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Start Navigation -->
+			<nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+				<div class="container-fluid">
+
+
+					<!-- Start Header Navigation -->
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">
+							<img src="{% static 'assets/img/listing-hub-white.png' %}" class="logo logo-display" alt="">
+							<img src="{% static 'assets/img/listing-hub-white.png' %}" class="logo logo-scrolled" alt="">
+						</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbar-menu">
+						<ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+							<!-- <li>
+								<a href="index.html" >Home</a>
+							</li>
+							<li><a  href="javascript:void(0)"  data-toggle="modal" data-target="#signup">Sign In</a></li> -->
+						</ul>
+						<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+							<li class="no-pd"><a href="" class="addlist"><i class="ti-user" aria-hidden="true"></i>Add Listing</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+			</nav>
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+
+			<!-- Main Banner Section Start -->
+			<div class="banner dark-opacity" style="background-image:url({% static 'assets/img/third-mainland-1.jpg' %});">
+				<div class="container">
+					<div class="banner-caption">
+						<div class="col-md-12 col-sm-12 banner-text">
+							<h1>Looking for a Business</h1>
+							<p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam</p>
+
+
+							<form  action="search/" method="get"  >
+							<form class="form-verticle">
+								<div class="col-md-4 col-sm-4 no-padd">
+									<i class="banner-icon icon-pencil"></i>
+									<input type="text" class="form-control left-radius right-br" placeholder="Keywords.." name="Description">
+								</div>
+								<div class="col-md-3 col-sm-3 no-padd">
+									<div class="form-box">
+										<i class="banner-icon icon-map-pin"></i>
+										<input type="text" class="form-control right-br" placeholder="Name" name="Name" >
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 no-padd">
+									<div class="form-box">
+										<i class="banner-icon icon-layers"></i>
+										<select class="form-control" name="Category">
+											<!-- <option data-placeholder="Choose Category" class="chosen-select" disabled>Choose Category</option> -->
+											{% for obj in Cat %}
+											<option value="{{obj.id}}">{{obj.category}}</option>
+											{% endfor %}
+
+										</select>
+
+									</div>
+								</div>
+
+								<div class="col-md-2 col-sm-2 no-padd">
+									<div class="form-box">
+
+									    <button type="submit" class="btn theme-btn btn-default">Search</button>
+									  </form>
+
+									</div>
+								</div>
+							</form>
+
+							<div class="popular-categories">
+								<ul class="popular-categories-list">
+
+									<li>
+										<a href="/travel">
+											<div class="pc-box">
+												<i class="fa fa-plane" aria-hidden="true"></i>
+												<p>Travel</p>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="/art">
+											<div class="pc-box">
+												<i class="fa fa-paint-brush" aria-hidden="true"></i>
+												<p>Art & Design</p>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="/book">
+											<div class="pc-box">
+												<i class="fa fa-file-text" aria-hidden="true"></i>
+												<p>Book Shop</p>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="/restaurants">
+											<div class="pc-box">
+												<i class="fa fa-glass" aria-hidden="true"></i>
+												<p>Restaurants</p>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="/business">
+											<div class="pc-box">
+												<i class="fa fa-briefcase" aria-hidden="true"></i>
+												<p>Business</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<!-- Main Banner Section End -->
+
+			<!-- Popular Listing Section -->
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+						<div class="heading">
+							<h2>Popular <span>Listings</span></h2>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+						</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<div class="listing-shot grid-style">
+								<div class="listing-badge now-open">sponsored</div>
+								<a href="listing-detail.html">
+									<div class="listing-shot-img">
+										<img src="{% static 'assets/img/category/art.jpg' %}" class="img-responsive" alt="">
+										<span class="approve-listing"><i class="fa fa-check"></i></span>
+									</div>
+									<div class="listing-shot-caption">
+										<h4>Art & Design</h4>
+										<p class="listing-location">Bishop Avenue, Ojuelegba</p>
+										<span class="like-listing style-2"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+									</div>
+								</a>
+								<div class="listing-shot-info">
+									<div class="row extra">
+										<div class="col-md-12">
+											<div class="listing-detail-info">
+												<span><i class="fa fa-phone" aria-hidden="true"></i> 807-502-5867</span>
+												<span><i class="fa fa-globe" aria-hidden="true"></i> www.mysitelink.com</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="listing-shot-info rating">
+									<div class="row extra">
+										<div class="col-md-7 col-sm-7 col-xs-6">
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star-half-o" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										</div>
+										<div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+											<a href="/art" class="detail-link">Open Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<div class="listing-shot grid-style">
+								<a href="listing-detail.html">
+									<div class="listing-shot-img">
+										<img src="{% static 'assets/img/category/Bank-Img.jpg' %}" class="img-responsive" alt="">
+									</div>
+									<div class="listing-shot-caption">
+										<h4>Banks</h4>
+										<p class="listing-location">Adeoku Ajose, VI</p>
+										<span class="like-listing style-2"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+									</div>
+								</a>
+								<div class="listing-shot-info">
+									<div class="row extra">
+										<div class="col-md-12">
+											<div class="listing-detail-info">
+												<span><i class="fa fa-phone" aria-hidden="true"></i> 807-502-5867</span>
+												<span><i class="fa fa-globe" aria-hidden="true"></i> www.mysitelink.com</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="listing-shot-info rating">
+									<div class="row extra">
+										<div class="col-md-7 col-sm-7 col-xs-6">
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star-half-o" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										</div>
+										<div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+											<a href="/business" class="detail-link">Open Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<div class="listing-shot grid-style">
+								<a href="listing-detail.html">
+									<div class="listing-shot-img">
+										<img src="{% static 'assets/img/category/ICT-img.jpg' %}" class="img-responsive" alt="">
+										<span class="approve-listing"><i class="fa fa-check"></i></span>
+									</div>
+									<div class="listing-shot-caption">
+										<h4>IT </h4>
+										<p class="listing-location">YabaValley, Lagos</p>
+										<span class="like-listing style-2"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+									</div>
+								</a>
+								<div class="listing-shot-info">
+									<div class="row extra">
+										<div class="col-md-12">
+											<div class="listing-detail-info">
+												<span><i class="fa fa-phone" aria-hidden="true"></i> 807-502-5867</span>
+												<span><i class="fa fa-globe" aria-hidden="true"></i> www.mysitelink.com</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="listing-shot-info rating">
+									<div class="row extra">
+										<div class="col-md-7 col-sm-7 col-xs-6">
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star" aria-hidden="true"></i>
+											<i class="color fa fa-star-half-o" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										</div>
+										<div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+											<a href="/business" class="detail-link">Open Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- End Popular Listing Section -->
+
+			<!-- ================ Start Footer ======================= -->
+			<footer class="footer dark-bg">
+				<div class="footer-copyright">
+					<ul class="footer-social" style="float:right">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					</ul>
+					<p>Copyright@ 2018 MLTListing By <a href="" title="MLT" target="_blank">Motus</a></p>
+
+				</div>
+			</footer>
+			<!-- ================ End Footer Section ======================= -->
+
+
+			<a id="back2Top" class="theme-bg" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+
+			<!-- START JAVASCRIPT -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/bootstrap.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/bootsnav.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/bootstrap-select.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/bootstrap-touch-slider-min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jquery.touchSwipe.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/chosen.jquery.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/datedropper.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/dropzone.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jquery.counterup.min.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jquery.fancybox.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jquery.nice-select.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jqueryadd-count.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/jquery-rating.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/slick.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/timedropper.js' %}"></script>
+			<script src="{% static 'assets/plugins/js/waypoints.min.js' %}"></script>
+
+			<script src="{% static 'assets/js/jQuery.style.switcher.js' %}"></script>
+
+
+			<!-- Custom Js -->
+			<script src="{% static 'assets/js/custom.js' %}"></script>
+
+			<script>
+				function openRightMenu() {
+					document.getElementById("rightMenu").style.display = "block";
+				}
+				function closeRightMenu() {
+					document.getElementById("rightMenu").style.display = "none";
+				}
+			</script>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#styleOptions').styleSwitcher();
+				});
+			</script>
+
+			<script type="text/javascript">
+				  $(document).ready(function() {
+				  $('select').niceSelect();
+				});
+			</script>
+
+		</div>
+	</body>
+
+</html>
